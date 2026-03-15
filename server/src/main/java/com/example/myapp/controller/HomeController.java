@@ -13,7 +13,12 @@ public class HomeController {
     public Map<String, String> home() {
         return Map.of("message", "Project loaded successfully ✅");
     }
+    @GetMapping("/health")
+    public ResponseEntity<?> health() {
+    return ResponseEntity.ok("Server is running ✅  ");
+}
 
+<<<<<<< HEAD
     @GetMapping("/health")
     public ResponseEntity<?> health() {
     return ResponseEntity.ok("Server is running ✅  ");
@@ -21,3 +26,6 @@ public class HomeController {
 
 
 }
+=======
+}
+>>>>>>> 0c83ad23df6902b7aa7e945fea45e69b13514c3e

@@ -190,14 +190,14 @@ Example usage in README:
 
 Typical deployment setup:
 
-Frontend → Netlify  
+Frontend → Vercel  
 Backend → Render  
 Database → Neon PostgreSQL
 
 Example:
 
-Frontend: https://your-app.vercel.app  
-Backend: https://your-api.onrender.com
+Frontend: https://ttautt.vercel.app/
+Backend: https://project-form-2yll.onrender.com
 
 ---
 
