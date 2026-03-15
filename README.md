@@ -118,13 +118,13 @@ git clone https://github.com/yourusername/project-form.git
 
 Create a Neon PostgreSQL database.
 
-Example Add `.env` configuration: 
-
+ Add `.env` configuration in Backend : 
+```
 spring.datasource.url=${YOUR_DATABASE_URL}  
 spring.datasource.username=${YOUR_DATABASE_USERNAME}  
 spring.datasource.password=${YOUR_DATABASE_PASSWORD}  
-spring.jpa.hibernate.ddl-auto=update  
 
+```
 ---
 
 #### 2️⃣ Run Backend
@@ -135,7 +135,11 @@ Backend runs on:
 
 http://localhost:4040
 
+Update src/api/Api.js → set base_url to your backend URL.
+
 #### 3️⃣ Run Frontend
+
+
 cd client
 npm install
 npm run dev
