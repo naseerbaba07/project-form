@@ -25,17 +25,33 @@ frontend: "",
 backend: ""
 });
 
+const [backendOffline, setBackendOffline] = useState(false);
 
 
-const loadData = async () => {
+
+const loadData = async (attempt = 1) => {
   try {
+
     setLoading(true);
+
     const res = await getProjects();
+
     setProjects(res.data);
-  } catch (err) {
-    console.error(err);
-  } finally {
     setLoading(false);
+    setBackendOffline(false);
+
+  } catch (err) {
+
+    toast.success("Backend waking... attempt:", attempt);
+     console.error(err)
+    if (attempt >= 9) {
+      setLoading(false);
+      setBackendOffline(true);
+      return;
+    }
+
+    setTimeout(() => loadData(attempt + 1), 5000);
+
   }
 };
 
@@ -237,10 +253,22 @@ const exportPDF = () => {
  
   doc.save(`Student_Project_Report_${timestamp}.pdf`);
 };
-
-
-
-
+if (loading) {
+  return (
+    <div className="page-loader">
+      <Loader />
+    </div>
+  );
+}
+if (backendOffline) {
+  return (
+    <div className="page-loader">
+      <Loader/>
+      <h2 style={{color:"red"}}>🔴 Backend Offline</h2>
+      <p>Please refresh later</p>
+    </div>
+  );
+}
 
 return (
 
@@ -280,9 +308,7 @@ p.rollno.toLowerCase().includes(search.toLowerCase())
   </div>
 
 
-{loading ? (
-  <p style={{ textAlign: "center" ,marginTop: "160px" }}><Loader /></p>
-) : (
+ 
   <table>
 
     <thead>
@@ -386,7 +412,7 @@ p.rollno.toLowerCase().includes(search.toLowerCase())
     </tbody>
 
   </table>
-  )}
+  
 
 </div>
 

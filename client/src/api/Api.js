@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:4040/data"
+  baseURL: "https://project-form-2yll.onrender.com/data"
 });
 
 // GET all projects
