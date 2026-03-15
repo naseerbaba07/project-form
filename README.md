@@ -11,9 +11,16 @@ This project demonstrates **REST API design, full‑stack integration, responsiv
 
 ---
 
-# 🎥 Demo
-(Add a GIF demo here once recorded)
+# 🎥 Live Demo
+Frontend (Vercel)
+```
+https://ttautt.vercel.app
+```
+Backend API (Render)
 
+```
+https://project-form-2yll.onrender.com
+```
 ---
 
 # 🚀 Project Overview
@@ -100,47 +107,41 @@ Entity → database models
 ---
 
 
+# ▶ Running the Project / ⚡ Installation
 
+#### 1️⃣ Clone the repository
+```
+git clone https://github.com/yourusername/project-form.git
+```
 ---
-
-# 🗄 Database Setup
+#### 🗄 Database Setup
 
 Create a Neon PostgreSQL database.
 
-Example `.env` configuration:
+Example Add `.env` configuration: 
 
-DB_URL=jdbc:postgresql://host/database  
-DB_USERNAME=username  
-DB_PASSWORD=password  
-
-Example Spring configuration:
-
-spring.datasource.url=${DB_URL}  
-spring.datasource.username=${DB_USERNAME}  
-spring.datasource.password=${DB_PASSWORD}  
+spring.datasource.url=${YOUR_DATABASE_URL}  
+spring.datasource.username=${YOUR_DATABASE_USERNAME}  
+spring.datasource.password=${YOUR_DATABASE_PASSWORD}  
 spring.jpa.hibernate.ddl-auto=update  
 
 ---
 
-# ▶ Running the Project
-
-## Backend
-
-cd backend  
+#### 2️⃣ Run Backend
+cd server
 mvn spring-boot:run
 
-Runs at:
+Backend runs on:
+
 http://localhost:4040
 
----
-
-## Frontend
-
-cd frontend  
-npm install  
+#### 3️⃣ Run Frontend
+cd client
+npm install
 npm run dev
 
-Runs at:
+Frontend runs on:
+
 http://localhost:5173
 
 ---
@@ -161,7 +162,7 @@ Add Project
 POST /data/add
 
 Request Body:
-
+```
 {
   "rollno": "21CS001",
   "section": "A",
@@ -170,7 +171,7 @@ Request Body:
   "frontend": "https://project.vercel.app",
   "backend": "https://api.project.com"
 }
-
+```
 Response:
 
 "Data inserted successfully"
@@ -197,6 +198,8 @@ Database → Neon PostgreSQL
 Example:
 
 Frontend: https://ttautt.vercel.app/
+
+
 Backend: https://project-form-2yll.onrender.com
 
 ---
